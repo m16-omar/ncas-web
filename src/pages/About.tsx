@@ -1,7 +1,7 @@
 import React from 'react';
 import { Eye, Target } from 'lucide-react';
 import { PageHeader } from '../components/PageHeader';
-import { Why, Founder, Numbers } from '../components/About';
+import { Why, Founder, Numbers, Pillars } from '../components/About';
 import { Market, Summit } from '../components/Sections';
 import { STORY } from '../data';
 import { useMeta } from '../lib/meta';
@@ -39,6 +39,7 @@ export const About: React.FC = () => {
           awards recognise the people and businesses driving the whole trade.
         </p>
       </Why>
+      <Pillars />
       <Numbers />
       <Market />
       <Summit />

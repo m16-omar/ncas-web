@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { name: 'Categories', to: '/categories' },
   { name: 'Submit', to: '/submit' },
   { name: 'Nominees', to: '/nominees' },
-  { name: 'Event', to: '/event' },
+  { name: 'Tickets', to: '/tickets' },
   { name: 'Sponsors', to: '/sponsors' },
   { name: 'Press', to: '/press' },
 ];
@@ -24,8 +24,8 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
   const open = useOpenModal();
   const { pathname } = useLocation();
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -48,33 +48,32 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
     <nav className={`nav always-dark${scrolled ? ' scrolled' : ''}${menuOpen ? ' open' : ''}`} aria-label="Main">
       <div className="nav-cont">
         <Link to="/" className="nav-logo" aria-label="Nigerian Cinema Awards home">
-          <Logo size={42} />
+          <Logo size={44} />
           <span>
-            <b>NCAs</b>
-            <small>NIGERIAN CINEMA AWARDS</small>
+            <b>Cinema</b>
+            <small>nigerian awards</small>
           </span>
         </Link>
 
         <ul className="nav-links">
           {NAV_LINKS.map((link) => (
             <li key={link.to}>
-              <NavLink className="nav-link" to={link.to} end={link.to === '/'}>
-                <span>{link.name}</span>
-              </NavLink>
+              <NavLink className="nav-link" to={link.to} end={link.to === '/'}>{link.name}</NavLink>
             </li>
           ))}
         </ul>
 
-        <div className="nav-cta">
+        <div className="nav-right">
+          <div className="nav-welcome" aria-hidden="true">
+            <span className="script">Welcome</span>
+            <i />
+            <span className="edition">
+              <b>NCAs</b>
+              <small>2026 · 27</small>
+            </span>
+          </div>
           <button className="theme-btn" onClick={onToggleTheme} aria-label={themeLabel} title={themeLabel}>
-            <ThemeIcon size={18} />
-          </button>
-          <Link className="reg-btn" to="/tickets">Tickets</Link>
-        </div>
-
-        <div className="nav-mobile-actions">
-          <button className="theme-btn" onClick={onToggleTheme} aria-label={themeLabel}>
-            <ThemeIcon size={18} />
+            <ThemeIcon size={16} />
           </button>
           <button
             className="nav-toggle"
@@ -92,9 +91,9 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
           {NAV_LINKS.map((link) => (
             <NavLink key={link.to} to={link.to} end={link.to === '/'}>{link.name}</NavLink>
           ))}
+          <NavLink to="/event">Event &amp; Agenda</NavLink>
           <NavLink to="/live">Live</NavLink>
-          <Link className="reg-btn" to="/tickets">Tickets</Link>
-          <button className="reg-btn ghost" style={{ marginTop: 10 }} onClick={() => open('updates')}>Get Updates</button>
+          <button className="reg-btn" onClick={() => open('updates')}>Get Updates</button>
         </div>
       )}
     </nav>

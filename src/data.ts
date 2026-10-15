@@ -321,3 +321,55 @@ export const FAQS = [
     a: 'Use the partnership enquiry form or email our partnerships team. Partners in the pilot cycle are recognised as founding partners.',
   },
 ];
+
+// ---------------------------------------------------------------------------
+// Photography. Drop files into public/images/ and set the paths here, e.g.
+// hero: '/images/hero.jpg'. Empty slots show a styled placeholder.
+// ---------------------------------------------------------------------------
+export const IMAGES = {
+  hero: '',
+  heroVideo: '', // optional .mp4 for the hero background
+  about: '',
+  aboutSmall: '',
+  founder: '',
+  market: '',
+  exhibit: '',
+  highlightVideo: '', // optional .mp4 for the highlights section
+  stats: ['', '', '', '', '', ''],
+  gallery: ['', '', '', '', '', '', '', '', '', '', '', ''],
+};
+
+// Scrolling text ribbons under the stats tiles.
+export const RIBBON_CTA = 'Submit your film';
+export const CITIES = [
+  'Lagos', 'Abuja', 'Port Harcourt', 'Ibadan', 'Enugu', 'Benin City', 'Kano', 'Uyo', 'Owerri', 'Calabar', 'Asaba', 'Warri',
+];
+
+// Roles listed in the "who takes part" panel.
+export const ROLES = [
+  'Producers & Studios',
+  'Directors & Screenwriters',
+  'Actors & Actresses',
+  'Cinematographers & Editors',
+  'Sound, Music & Score Teams',
+  'Costume, Makeup & Hair Artists',
+  'Marketers, PR & Trailer Houses',
+  'Distributors & Rights Holders',
+  'Cinema & Multiplex Operators',
+  'Critics, Press & Audiences',
+];
+
+// Big numbers in the "Why cinema" panel.
+export const CINEMA_FACTS = [
+  { value: '26', label: 'Award categories' },
+  { value: '4', label: 'Value-chain pillars' },
+  { value: '12', label: 'Month eligibility window' },
+  { value: '3', label: 'Release markets screened' },
+];
+
+export const PATRON = {
+  label: 'An initiative of',
+  name: "3ra'fique Media",
+};
+
+export const JURY_SEATS = 10;
