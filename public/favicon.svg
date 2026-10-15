@@ -4,7 +4,7 @@
       <stop offset="0" stop-color="#ecd59a"/><stop offset=".55" stop-color="#d4af5f"/><stop offset="1" stop-color="#9c7a35"/>
     </linearGradient>
   </defs>
-  <circle cx="32" cy="32" r="31" fill="#0a0908"/>
+  <circle cx="32" cy="32" r="31" fill="#03010a"/>
   <circle cx="32" cy="32" r="29" stroke="url(#g)" stroke-width="3"/>
   <path d="M32 18 L35.5 28 L46 28 L37.5 34.3 L40.7 44.5 L32 38.3 L23.3 44.5 L26.5 34.3 L18 28 L28.5 28 Z" fill="url(#g)"/>
   <rect x="24" y="50" width="16" height="3" rx="1.5" fill="#0f8a54"/>
