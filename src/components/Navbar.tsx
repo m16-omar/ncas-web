@@ -45,13 +45,13 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
   const themeLabel = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
 
   return (
-    <nav className={`nav always-dark${scrolled ? ' scrolled' : ''}${menuOpen ? ' open' : ''}`} aria-label="Main">
+    <nav className={`nav${scrolled ? ' scrolled' : ''}${menuOpen ? ' open' : ''}`} aria-label="Main">
       <div className="nav-cont">
         <Link to="/" className="nav-logo" aria-label="Nigerian Cinema Awards home">
-          <Logo size={44} />
+          <Logo size={42} />
           <span>
-            <b>Cinema</b>
-            <small>nigerian awards</small>
+            <b>NCAs</b>
+            <small>Nigerian Cinema Awards</small>
           </span>
         </Link>
 
@@ -72,7 +72,16 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
               <small>2026 · 27</small>
             </span>
           </div>
-          <button className="theme-btn" onClick={onToggleTheme} aria-label={themeLabel} title={themeLabel}>
+          <button
+            type="button"
+            className="theme-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              onToggleTheme();
+            }}
+            aria-label={themeLabel}
+            title={themeLabel}
+          >
             <ThemeIcon size={16} />
           </button>
           <button

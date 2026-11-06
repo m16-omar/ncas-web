@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Clapperboard, Film, Radio, Ticket, Trophy } from 'lucide-react';
+import { Clapperboard, Film, Radio, Ticket, Trophy, Sparkles } from 'lucide-react';
 import { Logo } from './Logo';
 import { Photo } from './Photo';
 import { CRAFTS, DATES, IMAGES, PATRON, SITE } from '../data';
@@ -42,12 +42,37 @@ export const SubmitButton: React.FC<{ className?: string; children?: React.React
     </Link>
   );
 
-const HEADLINES: Record<Phase, { stroke: string; main: string; sub: string }> = {
-  launch: { stroke: "Celebrating Nigeria's", main: 'Finest Films Made for Cinema', sub: 'Recognise. Celebrate. Strengthen.' },
-  entries: { stroke: 'Entries are now open', main: 'Submit Your Film to the NCAs', sub: 'Entries close 31 January 2027.' },
-  shortlist: { stroke: 'The nominees are in', main: 'Join Us on Awards Night', sub: 'Tickets and tables on sale now.' },
-  live: { stroke: 'Live tonight', main: 'The Nigerian Cinema Awards', sub: 'Watch the ceremony as it happens.' },
-  winners: { stroke: 'Celebrating', main: "This Year's Winners", sub: 'See you at the next cycle.' },
+const HEADLINES: Record<Phase, { stroke: string; main: string; emphasis: string; sub: string }> = {
+  launch: {
+    stroke: 'The Nigerian Cinema Awards (NCAs):',
+    main: 'Institutionalizing Prestige.',
+    emphasis: 'Formalizing Value Chains. Protecting Creative Labor.',
+    sub: 'Recognizing distinction and building lasting infrastructure across production, exhibition, distribution, and promotion.',
+  },
+  entries: {
+    stroke: 'The Nigerian Cinema Awards (NCAs):',
+    main: 'Submit Your Film to the NCAs.',
+    emphasis: 'Formalizing Value Chains. Protecting Creative Labor.',
+    sub: 'Entries close 31 January 2027.',
+  },
+  shortlist: {
+    stroke: 'The Nigerian Cinema Awards (NCAs):',
+    main: 'Join Us on Awards Night.',
+    emphasis: 'Institutionalizing Prestige. Protecting Creative Labor.',
+    sub: 'Tickets and tables on sale now.',
+  },
+  live: {
+    stroke: 'The Nigerian Cinema Awards (NCAs):',
+    main: 'Live Tonight · The Ceremony.',
+    emphasis: 'Institutionalizing Prestige. Protecting Creative Labor.',
+    sub: 'Watch the live stream and red carpet as history unfolds.',
+  },
+  winners: {
+    stroke: 'The Nigerian Cinema Awards (NCAs):',
+    main: "Celebrating This Year's Winners.",
+    emphasis: 'Institutionalizing Prestige. Protecting Creative Labor.',
+    sub: 'Honoring excellence and resilience across the Nigerian cinematic value chain.',
+  },
 };
 
 export const Hero: React.FC<{ phase: Phase }> = ({ phase }) => {
@@ -59,7 +84,8 @@ export const Hero: React.FC<{ phase: Phase }> = ({ phase }) => {
     launch: (
       <>
         <button className="reg-btn" onClick={() => open('partner')}>Partner Now</button>
-        <button className="reg-btn" onClick={() => open('updates')}>Get Updates</button>
+        <a className="reg-btn secondary" href="#core-vision">Core Vision</a>
+        <button className="reg-btn outline" onClick={() => open('updates')}>Get Updates</button>
       </>
     ),
     entries: (
@@ -99,8 +125,19 @@ export const Hero: React.FC<{ phase: Phase }> = ({ phase }) => {
       )}
       <div className="cover-shade" aria-hidden="true" />
 
-      {/* Decorative floating photo tiles on the right, like a contact sheet */}
+      {/* Decorative floating photo tiles and the official Option 1 Trophy Plaque */}
       <div className="cover-tiles" aria-hidden="true">
+        <div className="trophy-spotlight ct">
+          <div className="trophy-glow" />
+          <img
+            src="/images/trophy-plaque-opt1.png"
+            alt="The Reel Trophy Plaque"
+            className="trophy-img"
+          />
+          <span className="trophy-badge">
+            <Sparkles size={11} /> The Reel Plaque
+          </span>
+        </div>
         <Photo className="ct ct1" src={IMAGES.stats[0]} />
         <Photo className="ct ct2" src={IMAGES.stats[1]} />
         <Photo className="ct ct3" src={IMAGES.stats[2]} />
@@ -110,12 +147,14 @@ export const Hero: React.FC<{ phase: Phase }> = ({ phase }) => {
       <div className="cover-container">
         <span className="cover-kicker">
           {phase === 'live' ? <span className="live-dot" /> : <Film size={13} />} {PHASE_LABELS[phase]} · {SITE.cycle}
+          <span className="pine-tag">Cinema Only</span>
         </span>
 
         <div className="cover-head">
           <h1 className="tagline">
             <span className="stroke">{copy.stroke}</span>
             <span className="solid">{copy.main}</span>
+            <span className="emphasis-creed">{copy.emphasis}</span>
           </h1>
           <div className="patron-box">
             <span>{PATRON.label}</span>

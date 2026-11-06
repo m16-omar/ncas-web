@@ -327,16 +327,36 @@ export const FAQS = [
 // hero: '/images/hero.jpg'. Empty slots show a styled placeholder.
 // ---------------------------------------------------------------------------
 export const IMAGES = {
-  hero: '',
+  hero: '/images/hero-cinema.jpg',
   heroVideo: '', // optional .mp4 for the hero background
-  about: '',
-  aboutSmall: '',
-  founder: '',
-  market: '',
-  exhibit: '',
+  about: '/images/about-cinema.jpg',
+  aboutSmall: '/images/about-small.jpg',
+  founder: '/images/founder-irabor.jpg',
+  market: '/images/market-cinema.jpg',
+  exhibit: '/images/exhibit-hall.jpg',
   highlightVideo: '', // optional .mp4 for the highlights section
-  stats: ['', '', '', '', '', ''],
-  gallery: ['', '', '', '', '', '', '', '', '', '', '', ''],
+  stats: [
+    '/images/stat-0.jpg',
+    '/images/stat-1.jpg',
+    '/images/stat-2.jpg',
+    '/images/stat-3.jpg',
+    '/images/stat-4.jpg',
+    '/images/stat-5.jpg',
+  ],
+  gallery: [
+    '/images/gallery-0.jpg',
+    '/images/gallery-1.jpg',
+    '/images/gallery-2.jpg',
+    '/images/gallery-3.jpg',
+    '/images/gallery-4.jpg',
+    '/images/gallery-5.jpg',
+    '/images/gallery-6.jpg',
+    '/images/gallery-7.jpg',
+    '/images/stat-0.jpg',
+    '/images/stat-1.jpg',
+    '/images/about-cinema.jpg',
+    '/images/market-cinema.jpg',
+  ],
 };
 
 // Scrolling text ribbons under the stats tiles.

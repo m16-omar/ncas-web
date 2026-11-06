@@ -41,7 +41,7 @@ function Shell() {
   useReveal();
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 700);
+    const timer = setTimeout(() => setLoaded(true), 600);
     return () => clearTimeout(timer);
   }, []);
 

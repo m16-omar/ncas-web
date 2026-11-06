@@ -1,5 +1,7 @@
 import React from 'react';
 import { Hero, CraftMarquee } from '../components/Hero';
+import { StakeholderBanner } from '../components/StakeholderBanner';
+import { CoreVision } from '../components/CoreVision';
 import { Why, Founder, Numbers } from '../components/About';
 import {
   Attend, Themes, Market, Summit, Exhibit, Speakers, Sponsors, Agenda, Gallery, Faq,
@@ -13,6 +15,8 @@ export const Home: React.FC<{ phase: Phase }> = ({ phase }) => {
     <>
       <Hero phase={phase} />
       <CraftMarquee />
+      <StakeholderBanner />
+      <CoreVision />
       <Why />
       <Founder />
       <Numbers />
